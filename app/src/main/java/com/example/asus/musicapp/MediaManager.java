@@ -47,7 +47,7 @@ public class MediaManager implements MediaPlayer.OnCompletionListener {
         mListSong = new ArrayList<>();
 
         Uri audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
-
+        //tao mang de lay doi tuong cua thuoc tinh file mp3
         String projection[] = new String[]{
                 MediaStore.Audio.AudioColumns.TITLE,
                 MediaStore.Audio.AudioColumns.DATA,
@@ -55,7 +55,7 @@ public class MediaManager implements MediaPlayer.OnCompletionListener {
                 MediaStore.Audio.AudioColumns.ARTIST,
                 MediaStore.Audio.AudioColumns.DURATION
         };
-
+        //truy van lay tat cac file co duoi.mp3
         String where = MediaStore.Audio.AudioColumns.DISPLAY_NAME + " LIKE '%.mp3'";
 
         Cursor c = mContext.getContentResolver().query(audioUri, projection, where, null, null);
@@ -122,7 +122,7 @@ public class MediaManager implements MediaPlayer.OnCompletionListener {
     public void setShuffle(boolean shuffle) {
         isShuffle = shuffle;
     }
-
+    //play stop
     public void play(int position) {
         mIndex = position;
         stop();

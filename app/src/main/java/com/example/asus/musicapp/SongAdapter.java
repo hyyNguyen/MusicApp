@@ -44,6 +44,7 @@ public class SongAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        //view holder de tranh lap lai danh sach. do lag
         ViewHolder viewHolder;
         if (convertView == null) {
             viewHolder = new ViewHolder();

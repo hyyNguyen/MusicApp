@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initView() {
 
         lvList = (ListView) findViewById(R.id.lv_list);
+        //do du lieu lai custom listview. custom listview cai danh sach bai hat
         lvList.setOnItemClickListener(this);
         lvList.setAdapter(adapter);
         tvSongName = (TextView) findViewById(R.id.tv_song_name);
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ivStop = (ImageView) findViewById(R.id.iv_stop);
         ivShuffle = (ImageView) findViewById(R.id.iv_shuffle);
 
+        //bat su kien onclick
         ivRepeat.setOnClickListener(this);
         ivBack.setOnClickListener(this);
         ivNext.setOnClickListener(this);
@@ -86,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvOrder.setText(String.valueOf(mediaManager.getIndex()) + "/" + String.valueOf(mediaManager.getListSong().size()));
     }
 
+    //xu li su kien onclick trong cac ham
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
